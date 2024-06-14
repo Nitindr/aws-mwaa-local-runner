@@ -21,7 +21,6 @@ services:
         environment:
             - LOAD_EX=n
             - EXECUTOR=Local
-            - PYTHONDONTWRITEBYTECODE=1
         logging:
             options:
                 max-size: 10m
