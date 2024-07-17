@@ -66,7 +66,7 @@ failure_handler = FailureHandlerOperator(
 This operator handles task successes by sending an SNS notification.
 
 Parameters
--`target_arn`: The ARN of the SNS topic to send the notification to.
+- `target_arn`: The ARN of the SNS topic to send the notification to.
 
 #### Example Usage
 ```python
