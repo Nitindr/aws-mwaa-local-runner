@@ -42,13 +42,14 @@ refresh_operator = PowerBIDatasetRefreshOperator(
     timeout_seconds=3600,
     check_interval_seconds=300
 )
+```
 
 ### FailureHandlerOperator
 
 This operator handles task failures by sending an SNS notification.
 
 Parameters
-target_arn: The ARN of the SNS topic to send the notification to.
+- `target_arn`: The ARN of the SNS topic to send the notification to.
 
 #### Example Usage
 
@@ -59,13 +60,13 @@ failure_handler = FailureHandlerOperator(
     task_id='handle_failure',
     target_arn='your-sns-topic-arn'
 )
-
+```
 ### SuccessHandlerOperator
 
 This operator handles task successes by sending an SNS notification.
 
 Parameters
-target_arn: The ARN of the SNS topic to send the notification to.
+-`target_arn`: The ARN of the SNS topic to send the notification to.
 
 #### Example Usage
 ```python
@@ -75,26 +76,26 @@ success_handler = SuccessHandlerOperator(
     task_id='handle_success',
     target_arn='your-sns-topic-arn'
 )
-
+```
 ### DoceboDataLoadOperator
 
 This operator loads data from the Docebo API and stores it in an S3 bucket. It supports multiple API endpoints and handles pagination.
 
 Parameters
 - `client_id`: The client ID for Docebo API authentication.
-client_secret: The client secret for Docebo API authentication.
-grant_type: The grant type for Docebo API authentication.
-scope: The scope for Docebo API authentication.
-username: The username for Docebo API authentication.
-password: The password for Docebo API authentication.
-token_url: The URL to obtain the access token.
-api_endpoint: The endpoint for the Docebo API.
-s3_bucket: The S3 bucket to store the data.
-s3_secret_access_key: The secret access key for S3.
-s3_access_key_id: The access key ID for S3.
-s3_region: The region for S3.
-destination_folder: The destination folder in the S3 bucket.
-api_name: The name of the Docebo API endpoint (e.g., 'user', 'enrollments', 'courses', 'reports').
+- `client_secret`: The client secret for Docebo API authentication.
+- `grant_type`: The grant type for Docebo API authentication.
+- `scope`: The scope for Docebo API authentication.
+- `username`: The username for Docebo API authentication.
+- `password`: The password for Docebo API authentication.
+- `token_url`: The URL to obtain the access token.
+- `api_endpoint`: The endpoint for the Docebo API.
+- `s3_bucket`: The S3 bucket to store the data.
+- `s3_secret_access_key`: The secret access key for S3.
+- `s3_access_key_id`: The access key ID for S3.
+- `s3_region`: The region for S3.
+- `destination_folder`: The destination folder in the S3 bucket.
+- `api_name`: The name of the Docebo API endpoint (e.g., 'user', 'enrollments', 'courses', 'reports').
 
 #### Example Usage
 
@@ -118,3 +119,4 @@ docebo_operator = DoceboDataLoadOperator(
     destination_folder='your-destination-folder',
     api_name='your-api-name'
 )
+```
