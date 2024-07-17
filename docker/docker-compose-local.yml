@@ -26,9 +26,9 @@ services:
         max-size: 10m
         max-file: "3"
     volumes:
-      - "${PWD}/dags:/usr/local/airflow/dags"
+      - "/mnt/c/ot-datateam-airflow/dags:/usr/local/airflow/dags"
       - "${PWD}/plugins:/usr/local/airflow/plugins"
-      - "${PWD}/requirements:/usr/local/airflow/requirements"
+      - "/mnt/c/ot-datateam-airflow/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
     ports:
       - "8080:8080"
