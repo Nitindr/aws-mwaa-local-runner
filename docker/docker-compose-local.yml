@@ -28,7 +28,7 @@ services:
     volumes:
       - "/Users/pragyanshukla/Documents/github/ot-datateam-airflow/dags:/usr/local/airflow/dags"
       - "${PWD}/plugins:/usr/local/airflow/plugins"
-      - "/mnt/c/ot-datateam-airflow/requirements:/usr/local/airflow/requirements"
+      - "${PWD}/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
     ports:
       - "8080:8080"
