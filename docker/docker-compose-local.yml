@@ -26,7 +26,7 @@ services:
         max-size: 10m
         max-file: "3"
     volumes:
-      - "/mnt/c/ot-datateam-airflow/dags:/usr/local/airflow/dags"
+      - "/Users/pragyanshukla/Documents/github/ot-datateam-airflow/dags:/usr/local/airflow/dags"
       - "${PWD}/plugins:/usr/local/airflow/plugins"
       - "/mnt/c/ot-datateam-airflow/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
