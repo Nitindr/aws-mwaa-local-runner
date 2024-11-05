@@ -2,3 +2,12 @@
 
 apache-airflow-providers-snowflake==5.7.0
 apache-airflow-providers-mysql==5.7.0
+apache-airflow-providers-dbt-cloud==3.10.0
+airflow-provider-fivetran-async==2.1.0
+airflow-provider-xlsx==1.0.1
+apache-airflow-providers-microsoft-azure==10.4.0
+apache-airflow-providers-salesforce==5.8.0
+simple-salesforce==1.12.6
+smart-open==7.0.5
+office365==0.3.15
+pandas==2.1.4
