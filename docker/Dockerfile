@@ -31,12 +31,25 @@ COPY script/verification.sh /verification.sh
 COPY config/constraints.txt /constraints.txt
 COPY config/mwaa-base-providers-requirements.txt /mwaa-base-providers-requirements.txt
 
+# Install the ca-certificates package
+RUN yum install -y ca-certificates
+
+# Copy the Root_CA.crt file to the container
+COPY Root_CA.crt /etc/pki/ca-trust/source/anchors/
+
+# Update the CA certificates
+RUN update-ca-trust
+
 RUN chmod u+x /systemlibs.sh && /systemlibs.sh
 RUN chmod u+x /bootstrap.sh && /bootstrap.sh
 RUN chmod u+x /generate_key.sh && /generate_key.sh
 RUN chmod u+x /run-startup.sh
 RUN chmod u+x /shell-launch-script.sh
 RUN chmod u+x /verification.sh
+
+# Map the certificate inside Airflow python library
+COPY Root_CA.crt /tmp/Root_CA.crt
+RUN cat /tmp/Root_CA.crt >> /usr/local/airflow/.local/lib/python3.11/site-packages/certifi/cacert.pem
 
 # Post bootstrap to avoid expensive docker rebuilds
 COPY script/entrypoint.sh /entrypoint.sh
